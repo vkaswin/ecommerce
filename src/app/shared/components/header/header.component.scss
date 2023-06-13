@@ -1,0 +1,11 @@
+header {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.2fr;
+  background-color: #32aeb1;
+  .search-box {
+    position: relative;
+    background: #ffffff;
+    border-radius: 6px;
+    height: 48px;
+  }
+}

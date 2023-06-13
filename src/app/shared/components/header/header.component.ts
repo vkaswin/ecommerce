@@ -12,4 +12,8 @@ export class HeaderComponent {
   get total() {
     return this.cartService.getTotal();
   }
+
+  get count() {
+    return this.cartService.getCart().length;
+  }
 }
