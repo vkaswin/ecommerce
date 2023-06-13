@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fff;
+  box-shadow: 0 6px 12px -4px rgba(11, 18, 25, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  img {
+    aspect-ratio: 1;
+  }
+  .info {
+    color: #0b1219;
+    font-size: 20px;
+  }
+  .price {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    div {
+      &:first-child {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+          &:first-child {
+            color: #0b1219;
+            font-size: 16px;
+          }
+          &:last-child {
+            color: #b9b9b9;
+            font-size: 14px;
+          }
+        }
+      }
+      &:last-child {
+        color: #5ba41c;
+        font-size: 16px;
+      }
+    }
+  }
+}
