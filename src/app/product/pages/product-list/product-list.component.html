@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<div class="loader" *ngIf="products.length === 0; else list"></div>
+
+<ng-template #list>
+  <div class="list">
+    <product-card
+      *ngFor="let product of products"
+      [product]="product"
+      [cart]="getCartById(product.id)"
+      (onAddToCart)="handleAddToCart($event)"
+      (onQuantityChange)="handleQuantity($event)"
+    />
+  </div>
+</ng-template>

@@ -1,13 +1,11 @@
-import { Component } from "@angular/core";
-import { IProduct } from "@/types/product";
+import { Injectable } from "@angular/core";
+import { IProduct } from "@/product/types/product";
 
-@Component({
-  selector: "product-list",
-  templateUrl: "./product-list.component.html",
-  styleUrls: ["./product-list.component.scss"],
+@Injectable({
+  providedIn: "root",
 })
-export class ProductListComponent {
-  products: IProduct[] = [
+export class ProductService {
+  private products: IProduct[] = [
     {
       id: 1,
       title: "iPhone 9",
@@ -584,4 +582,8 @@ export class ProductListComponent {
       ],
     },
   ];
+
+  getProducts(): IProduct[] {
+    return this.products;
+  }
 }

@@ -16,10 +16,10 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-demo'`, () => {
+  it(`should have as title 'ecommerce'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual("angular-demo");
+    expect(app.title).toEqual("ecommerce");
   });
 
   it("should render title", () => {
@@ -27,7 +27,7 @@ describe("AppComponent", () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector(".content span")?.textContent).toContain(
-      "angular-demo app is running!"
+      "ecommerce app is running!"
     );
   });
 });
