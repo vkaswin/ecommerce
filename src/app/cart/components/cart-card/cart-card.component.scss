@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #f3f7fb;
+  .info {
+    display: flex;
+    gap: 15px;
+    img {
+      aspect-ratio: 4 / 3;
+      max-width: 150px;
+    }
+    .detail {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .name {
+        color: #151b39;
+        font-size: 20px;
+      }
+      .desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #6f7284;
+        font-size: 16px;
+      }
+      .price {
+        color: #ef4281;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .mrp {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+          &:first-child {
+            color: #6f7284;
+            font-size: 16px;
+            text-decoration: line-through;
+          }
+          &:last-child {
+            font-size: 14px;
+            color: #118a23;
+          }
+        }
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 150px;
+  }
+}

@@ -1,3 +1,19 @@
 <div class="card">
-  <img [src]="product.thumbnail" />
+  <div class="info">
+    <img [src]="product.thumbnail" />
+    <div class="detail">
+      <span class="name">{{ product.title }}</span>
+      <span class="desc">{{ product.description }}</span>
+      <span class="price">{{ product.discountPrice | currency : "INR" }}</span>
+      <div class="mrp">
+        <span>{{ product.price | currency : "INR" }}</span>
+        <span>{{
+          product.price - product.discountPrice | currency : "INR"
+        }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <span>Remove</span>
+  </div>
 </div>

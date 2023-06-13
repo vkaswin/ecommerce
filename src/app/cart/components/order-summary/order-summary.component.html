@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="price-details">
+    <div>
+      <span>MRP Total</span>
+      <span>{{ totalAmount + discountAmount | currency : "INR" }}</span>
+    </div>
+    <div>
+      <span>Discount</span>
+      <span>{{ discountAmount | currency : "INR" }}</span>
+    </div>
+    <div>
+      <span>Total Amount</span>
+      <span>{{ totalAmount | currency : "INR" }}</span>
+    </div>
+    <div>
+      <span>Shipping</span>
+      <span>{{ 0 | currency : "INR" }}</span>
+    </div>
+  </div>
+  <div class="total">
+    <span>Total Payable</span>
+    <span>{{ totalAmount | currency : "INR" }}</span>
+  </div>
+  <div class="savings">
+    <span>Total Savings</span>
+    <span>{{ discountAmount | currency : "INR" }}</span>
+  </div>
+  <button>Proceed</button>
+</div>
