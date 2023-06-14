@@ -10,35 +10,40 @@ export class CartService {
   private discountAmount: number = 0;
 
   constructor() {
-    this.calculateTotal();
+    console.log("cart service created");
+    this.calculateTotalAmount();
   }
 
   getCart() {
     return this.cart;
   }
 
-  getTotal() {
+  getTotalAmount() {
     return this.totalAmount;
   }
 
-  getDiscount() {
+  getDiscountAmount() {
     return this.discountAmount;
   }
 
   addProduct(product: ICart) {
     this.cart.push(product);
-    this.calculateTotal();
+    this.calculateTotalAmount();
   }
 
   private getIndexByProductId(productId: number) {
     return this.cart.findIndex(({ id }) => id === productId);
   }
 
+  getProductById(productId: number) {
+    return this.cart.find(({ id }) => id === productId);
+  }
+
   removeProduct(productId: number) {
     let index = this.getIndexByProductId(productId);
     if (index === -1) return;
     this.cart.splice(index, 1);
-    this.calculateTotal();
+    this.calculateTotalAmount();
   }
 
   updateQuantity(productId: number, type: IQuantityAction) {
@@ -49,10 +54,10 @@ export class CartService {
       if (this.cart[index].quantity === 1) this.removeProduct(productId);
       else this.cart[index].quantity -= 1;
     }
-    this.calculateTotal();
+    this.calculateTotalAmount();
   }
 
-  calculateTotal() {
+  calculateTotalAmount() {
     let total = 0;
     let discount = 0;
 

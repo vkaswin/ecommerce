@@ -10,7 +10,7 @@ export class HeaderComponent {
   constructor(private cartService: CartService) {}
 
   get total() {
-    return this.cartService.getTotal();
+    return this.cartService.getTotalAmount();
   }
 
   get count() {

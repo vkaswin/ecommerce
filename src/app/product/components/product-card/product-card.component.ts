@@ -1,41 +1,27 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
-} from "@angular/core";
+import { Component, Input, OnChanges } from "@angular/core";
 import { IProduct } from "@/product/types/product";
-import { ICart, IQuantityAction } from "@/cart/types/cart";
+import { IQuantityAction } from "@/cart/types/cart";
+import { CartService } from "@/cart/services/cart.service";
 
 @Component({
   selector: "product-card",
   templateUrl: "./product-card.component.html",
   styleUrls: ["./product-card.component.scss"],
 })
-export class ProductCardComponent implements OnChanges {
+export class ProductCardComponent {
   @Input() product = {} as IProduct;
-  @Input() cart?: ICart;
 
-  @Output() onAddToCart = new EventEmitter<ICart>();
-  @Output() onQuantityChange = new EventEmitter<{
-    productId: number;
-    type: IQuantityAction;
-  }>();
+  constructor(private cartService: CartService) {}
 
-  discountPrice!: number;
+  get discountPrice() {
+    return (
+      this.product.price -
+      (this.product.price * this.product.discountPercentage) / 100
+    );
+  }
 
-  constructor() {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    let { product } = changes;
-
-    if (product && product.firstChange) {
-      this.discountPrice =
-        this.product.price -
-        (this.product.price * this.product.discountPercentage) / 100;
-    }
+  get cart() {
+    return this.cartService.getProductById(this.product.id);
   }
 
   handleAddToCart() {
@@ -50,7 +36,7 @@ export class ProductCardComponent implements OnChanges {
       thumbnail,
     } = this.product;
 
-    this.onAddToCart.emit({
+    this.cartService.addProduct({
       id,
       brand,
       category,
@@ -65,6 +51,6 @@ export class ProductCardComponent implements OnChanges {
   }
 
   handleQuantity(type: IQuantityAction) {
-    this.onQuantityChange.emit({ productId: this.product.id, type });
+    this.cartService.updateQuantity(this.product.id, type);
   }
 }

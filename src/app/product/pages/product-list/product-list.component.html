@@ -2,12 +2,6 @@
 
 <ng-template #list>
   <div class="list">
-    <product-card
-      *ngFor="let product of products"
-      [product]="product"
-      [cart]="getCartById(product.id)"
-      (onAddToCart)="handleAddToCart($event)"
-      (onQuantityChange)="handleQuantity($event)"
-    />
+    <product-card *ngFor="let product of products" [product]="product" />
   </div>
 </ng-template>

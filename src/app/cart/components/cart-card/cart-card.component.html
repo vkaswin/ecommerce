@@ -14,6 +14,13 @@
     </div>
   </div>
   <div class="actions">
-    <span>Remove</span>
+    <button class="remove-btn" (click)="removeProduct()">
+      <img src="assets/images/cart-remove.svg" />
+    </button>
+    <div class="quantity-btn">
+      <button (click)="updateQuantity('decrease')">&#8722;</button>
+      <span>{{ product.quantity }}</span>
+      <button (click)="updateQuantity('increase')">&#43;</button>
+    </div>
   </div>
 </div>

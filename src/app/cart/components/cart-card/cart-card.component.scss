@@ -52,7 +52,35 @@
   }
   .actions {
     display: flex;
-    justify-content: flex-end;
-    min-width: 150px;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: fit-content;
+    .remove-btn {
+      display: flex;
+      justify-content: flex-end;
+      border: none;
+      background-color: transparent;
+      img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+    }
+    .quantity-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      height: 37px;
+      button {
+        width: 35px;
+        height: 35px;
+        border: 1px solid rgba(112, 112, 112, 0.38);
+        border-radius: 50%;
+        color: #6f7284;
+        background-color: #fff;
+        font-size: 20px;
+      }
+    }
   }
 }

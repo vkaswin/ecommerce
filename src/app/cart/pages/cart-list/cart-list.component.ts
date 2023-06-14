@@ -14,10 +14,10 @@ export class CartListComponent {
   }
 
   get totalAmount() {
-    return this.cartService.getTotal();
+    return this.cartService.getTotalAmount();
   }
 
   get discountAmount() {
-    return this.cartService.getDiscount();
+    return this.cartService.getDiscountAmount();
   }
 }
