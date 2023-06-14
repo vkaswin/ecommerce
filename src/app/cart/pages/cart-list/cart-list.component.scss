@@ -57,22 +57,25 @@
       gap: 10px;
       margin: 30px 0px;
       span {
-        font-size: 16px;
+        font-size: 20px;
         color: #6f7284;
         &:first-child {
           color: #151b39;
         }
       }
-      button {
+      a {
         width: 75%;
-        margin-top: 30px;
-        background: #24aeb1;
-        font-size: 16px;
-        color: #fff;
-        border-radius: 4px;
-        text-transform: uppercase;
-        padding: 15px 0;
-        border: none;
+        button {
+          width: 100%;
+          margin-top: 30px;
+          background: #24aeb1;
+          font-size: 16px;
+          color: #fff;
+          border-radius: 4px;
+          text-transform: uppercase;
+          padding: 15px 0;
+          border: none;
+        }
       }
     }
   }
