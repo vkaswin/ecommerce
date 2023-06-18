@@ -18,6 +18,7 @@ export class AuthService {
     //   days: 30,
     // });
     let token = cookie.get("auth_token");
+    console.log(token);
     this.user = token ? jwtDecode(token) : null;
   }
 

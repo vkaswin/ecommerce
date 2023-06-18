@@ -1,14 +1,14 @@
 <header>
   <div class="logo">
     <a routerLink="/product/all">
-      <img src="assets/images/logo.png" />
+      <b>Electronice Store</b>
     </a>
   </div>
   <search-box />
   <div class="options">
     <a class="cart" routerLink="/cart">
       <img src="assets/images/cart_icon.svg" />
-      <span> {{ count }}</span>
+      <span *ngIf="count"> {{ count }}</span>
     </a>
     <a class="user" [routerLink]="user ? null : ['/auth/login']">
       <img src="assets/images/profile_icon.svg" />
