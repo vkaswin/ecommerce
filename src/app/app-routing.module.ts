@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { PageNotFoundComponent } from "@/shared/components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "product" },
+  { path: "", pathMatch: "full", redirectTo: "/product/all" },
   {
     path: "auth",
     loadChildren: () =>

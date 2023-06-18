@@ -1,1 +1,36 @@
-<p>product detail works!</p>
+<div *ngIf="loading; else detail">Loading...</div>
+
+<ng-template #detail>
+  <div class="container">
+    <div class="product-img">
+      <div>
+        <img
+          [src]="image"
+          *ngFor="let image of product.images; let i = index"
+          [class]="{ active: i === activeImage }"
+          (click)="handleImage(i)"
+        />
+      </div>
+      <div>
+        <img [src]="product.images[activeImage]" />
+      </div>
+    </div>
+    <div>
+      <div class="info">
+        <span>{{ product.title }}</span>
+        <span>{{ product.description }}</span>
+      </div>
+      <div class="price">
+        <span>Best Price *</span>
+        <b>{{ discountPrice | currency : "INR" }}</b>
+      </div>
+      <div class="mrp">
+        <span>MRP </span>
+        <span>{{ product.price | currency : "INR" }}</span>
+      </div>
+      <div class="add-btn">
+        <add-to-cart [product]="product" />
+      </div>
+    </div>
+  </div>
+</ng-template>

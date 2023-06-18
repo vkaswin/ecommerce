@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { IAllProduct } from "@/modules/product/types/product";
+import { IAllProduct, IProduct } from "@/modules/product/types/product";
 
 @Injectable({
   providedIn: "root",
@@ -16,6 +16,10 @@ export class ProductService {
     return this.http.get<IAllProduct>(this.allProductsUrl, {
       params: { page, limit: 30 },
     });
+  }
+
+  getProductById(id: string) {
+    return this.http.get<IProduct>(this.allProductsUrl + "/" + id);
   }
 
   searchProducts(keyword: string, page: number = 1) {

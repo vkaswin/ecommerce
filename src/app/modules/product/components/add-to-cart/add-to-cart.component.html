@@ -1,0 +1,14 @@
+<button
+  class="add-btn"
+  *ngIf="!cart; else quantity"
+  (click)="handleAddToCart()"
+>
+  Add To Cart
+</button>
+<ng-template #quantity>
+  <div class="quantity-btn">
+    <button (click)="handleQuantity('decrease')">&#8722;</button>
+    <span>{{ cart?.quantity }}</span>
+    <button (click)="handleQuantity('increase')">&#43;</button>
+  </div>
+</ng-template>

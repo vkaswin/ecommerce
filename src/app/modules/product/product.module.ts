@@ -7,6 +7,7 @@ import { ProductListComponent } from "./pages/product-list/product-list.componen
 import { ProductDetailComponent } from "./pages/product-detail/product-detail.component";
 import { SharedModule } from "@/shared/shared.module";
 import { LayoutComponent } from './layout/layout.component';
+import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { LayoutComponent } from './layout/layout.component';
     ProductListComponent,
     ProductDetailComponent,
     LayoutComponent,
+    AddToCartComponent,
   ],
   imports: [CommonModule, ProductRoutingModule, SharedModule],
 })

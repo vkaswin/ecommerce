@@ -1,32 +1,19 @@
-<a [routerLink]="['/product', product.id, 'detail']" class="card">
-  <span class="offer">{{ product.discountPercentage }} %</span>
-  <img [src]="product.thumbnail" />
-  <div class="info">
-    <span>{{ product.title }}</span>
-    <span>{{ product.description }}</span>
-  </div>
-  <div class="price">
-    <span>Best Price *</span>
-    <b>{{ discountPrice | currency : "INR" }}</b>
-  </div>
-  <div class="mrp">
-    <span>MRP </span>
-    <span>{{ product.price | currency : "INR" }}</span>
-  </div>
-  <div>
-    <button
-      class="buy-btn"
-      *ngIf="!cart; else quantity"
-      (click)="handleAddToCart()"
-    >
-      Add To Cart
-    </button>
-    <ng-template #quantity>
-      <div class="quantity-btn">
-        <button (click)="handleQuantity('decrease')">&#8722;</button>
-        <span>{{ cart?.quantity }}</span>
-        <button (click)="handleQuantity('increase')">&#43;</button>
-      </div>
-    </ng-template>
-  </div>
-</a>
+<div class="card">
+  <a [routerLink]="['/product', product.id, 'detail']">
+    <span class="offer">{{ product.discountPercentage }} %</span>
+    <img [src]="product.thumbnail" />
+    <div class="info">
+      <span>{{ product.title }}</span>
+      <span>{{ product.description }}</span>
+    </div>
+    <div class="price">
+      <span>Best Price *</span>
+      <b>{{ discountPrice | currency : "INR" }}</b>
+    </div>
+    <div class="mrp">
+      <span>MRP </span>
+      <span>{{ product.price | currency : "INR" }}</span>
+    </div>
+  </a>
+  <add-to-cart [product]="product" />
+</div>

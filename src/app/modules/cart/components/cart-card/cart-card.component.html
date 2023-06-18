@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="info">
+  <a [routerLink]="['/product', product.id, 'detail']" class="info">
     <img [src]="product.thumbnail" />
     <div class="detail">
       <span class="name">{{ product.title }}</span>
@@ -12,7 +12,7 @@
         }}</span>
       </div>
     </div>
-  </div>
+  </a>
   <div class="actions">
     <button class="remove-btn" (click)="removeProduct()">
       <img src="assets/images/cart-remove.svg" />
