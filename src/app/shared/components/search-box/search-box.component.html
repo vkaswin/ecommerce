@@ -1,0 +1,8 @@
+<div class="search-box">
+  <input (input)="handleSearch($event)" placeholder="Search for products" />
+  <div class="suggestions">
+    <div *ngFor="let product of products">
+      <span>{{ product.title }}</span>
+    </div>
+  </div>
+</div>

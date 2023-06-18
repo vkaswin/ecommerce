@@ -1,20 +1,18 @@
 <header>
   <div class="logo">
-    <a routerLink="/products">
+    <a routerLink="/product/all">
       <img src="assets/images/logo.png" />
     </a>
   </div>
-  <div class="search-box">
-    <input placeholder="Search for products" />
-  </div>
+  <search-box />
   <div class="options">
-    <a routerLink="/cart" class="cart">
+    <a class="cart" routerLink="/cart">
       <img src="assets/images/cart_icon.svg" />
       <span> {{ count }}</span>
     </a>
-    <div class="user">
+    <a class="user" [routerLink]="user ? null : ['/auth/login']">
       <img src="assets/images/profile_icon.svg" />
-      <span>Login</span>
-    </div>
+      <span>{{ user ? user.name : "Login" }}</span>
+    </a>
   </div>
 </header>

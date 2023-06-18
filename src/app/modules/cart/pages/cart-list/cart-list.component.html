@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="title">
+    <b>My Cart</b>
+  </div>
+  <section *ngIf="products.length !== 0; else emptyCart">
+    <div class="products">
+      <div class="title">
+        <span>Products</span>
+      </div>
+      <div class="list">
+        <cart-card *ngFor="let product of products" [product]="product" />
+      </div>
+
+      <a routerLink="/product/all">
+        <button class="add-btn">Add More Items</button>
+      </a>
+    </div>
+    <div class="summary">
+      <order-summary
+        [totalAmount]="totalAmount"
+        [discountAmount]="discountAmount"
+      />
+    </div>
+  </section>
+  <ng-template #emptyCart>
+    <div class="empty-cart">
+      <div class="cart-img">
+        <img src="assets/images/emptycart.svg" />
+      </div>
+      <div class="info">
+        <span>Your Cart is empty!</span>
+        <span>You have no items added in the cart.</span>
+        <span>Explore and add products you like!</span>
+        <a routerLink="/product/all">
+          <button>Add Products</button>
+        </a>
+      </div>
+    </div>
+  </ng-template>
+</div>

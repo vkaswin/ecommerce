@@ -2,7 +2,7 @@ header {
   position: sticky;
   top: 0px;
   display: grid;
-  grid-template-columns: 0.3fr 1fr 0.2fr;
+  grid-template-columns: 0.3fr 1fr 0.3fr;
   background-color: #32aeb1;
   align-items: center;
   height: 75px;
@@ -13,28 +13,10 @@ header {
       height: 37px;
     }
   }
-  .search-box {
-    position: relative;
-    height: 45px;
-    input {
-      width: 75%;
-      height: 100%;
-      background-color: #f1f3f4;
-      border-radius: 6px;
-      border: none;
-      padding: 0px 15px;
-      font-size: 16px;
-      outline: none;
-      &:focus {
-        background: rgba(255, 255, 255, 1);
-        box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3),
-          0 1px 3px 1px rgba(65, 69, 73, 0.15);
-      }
-    }
-  }
   .options {
     display: flex;
     align-content: center;
+    justify-content: flex-end;
     gap: 25px;
     .cart {
       position: relative;
